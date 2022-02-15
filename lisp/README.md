@@ -3,7 +3,7 @@
 
 | Лабораторные  |     <p align="center">Задание    |      Статус    |
 | :-------------: |-------------|:-------------:|
-| [Lab 01](https://github.com/DeadlyHunter38/bmstu_sem_6_falp/lisp/tree/master/lab_01)| <p align="left">Списки в LISP. Использование стандартных функций.<p>| ✅
+| [Lab 01](https://github.com/DeadlyHunter38/bmstu_sem_6_falp/tree/master/lisp/lab_01)| <p align="left">Списки в LISP. Использование стандартных функций.<p>| ✅
 
 
 ### Обозначения:
