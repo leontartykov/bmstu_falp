@@ -97,7 +97,7 @@
 	\item (cons Nil Nil) => (Nil)
 	
 	\item (cons T Nil) => (T)
-	\item (cons Nil T) => (Nil T)
+	\item (cons Nil T) => (Nil.T)
 	\item (list Nil)
 	
 	(cons Nil Nil) => (Nil)
@@ -106,7 +106,7 @@
 	
 	\item (list '(one two) '(free temp))
 	
-	(cons '(one two) (cons '(free temp)))
+	(cons '(one two) (cons '(free temp) ()))
 	
 	((one two) (free temp))
 	
@@ -120,31 +120,25 @@
 	
 	\item (list Nil Nil)
 	
-	(cons Nil Nil) => (Nil Nil)
+	(cons Nil (cons Nil Nil)) => (Nil Nil)
 	
 	\item (list T Nil)
 	
-	(cons T Nil) => (T Nil)
+	(cons T (cons (Nil Nil)) => (T Nil)
 	
 	\item (list Nil T)
 	
-	(cons Nil T) => (Nil T)
+	(cons Nil (cons T Nil)) => (Nil T)
 	
 	\item (cons T (list Nil))
 	
 	(cons T (cons Nil Nil))
 	
-	(cons T Nil Nil) 
+	(cons T Nil) 
 	
-	(T Nil Nil)
-	
-	(T Nil)
+	(T)
 	
 	\item (list '(T) Nil)
-	
-	(cons '(T) (cons Nil Nil))
-	
-	(cons '(T) Nil)
 	
 	((T) Nil)
 	

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.14)  15 FEB 2022 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.9.14)  16 FEB 2022 18:11
 entering extended mode
 **./report.tex
 (report.tex
@@ -1453,11 +1453,11 @@ Package pdftex.def Info: images/task_1 (5).pdf  used on input line 33.
 
 pdfTeX warning: pdflatex.exe (file ./images/task_1 (6).pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<images/task_1 (6).pdf, id=93, 384.001pt x 240.3103pt>
+<images/task_1 (6).pdf, id=93, 376.56873pt x 251.45874pt>
 File: images/task_1 (6).pdf Graphic file (type pdf)
 <use images/task_1 (6).pdf>
 Package pdftex.def Info: images/task_1 (6).pdf  used on input line 39.
-(pdftex.def)             Requested size: 384.00006pt x 240.3097pt.
+(pdftex.def)             Requested size: 376.5678pt x 251.45811pt.
 [7 <./images/task_1 (3).pdf> <./images/task_1 (4).pdf> <./images/task_1 (5).pdf
 >]
 Overfull \hbox (1.5074pt too wide) in paragraph at lines 42--42
@@ -1468,10 +1468,10 @@ Overfull \hbox (1.5074pt too wide) in paragraph at lines 42--42
 <images/task_5_1.pdf, id=143, 468.23344pt x 177.1359pt>
 File: images/task_5_1.pdf Graphic file (type pdf)
 <use images/task_5_1.pdf>
-Package pdftex.def Info: images/task_5_1.pdf  used on input line 166.
+Package pdftex.def Info: images/task_5_1.pdf  used on input line 160.
 (pdftex.def)             Requested size: 468.23228pt x 177.13545pt.
 
-Overfull \hbox (12.98817pt too wide) in paragraph at lines 166--167
+Overfull \hbox (12.98817pt too wide) in paragraph at lines 160--161
  [][] 
  []
 
@@ -1482,19 +1482,19 @@ pdfTeX warning: pdflatex.exe (file ./images/task_5_2.pdf): PDF inclusion: found
 <images/task_5_2.pdf, id=144, 309.67819pt x 179.61336pt>
 File: images/task_5_2.pdf Graphic file (type pdf)
 <use images/task_5_2.pdf>
-Package pdftex.def Info: images/task_5_2.pdf  used on input line 175.
+Package pdftex.def Info: images/task_5_2.pdf  used on input line 169.
 (pdftex.def)             Requested size: 309.67741pt x 179.6129pt.
-[11 <./images/task_5_1.pdf> <./images/task_5_2.pdf>]
+
 
 pdfTeX warning: pdflatex.exe (file ./images/task_5_3.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<images/task_5_3.pdf, id=166, 175.89722pt x 216.77475pt>
+<images/task_5_3.pdf, id=145, 175.89722pt x 216.77475pt>
 File: images/task_5_3.pdf Graphic file (type pdf)
 <use images/task_5_3.pdf>
-Package pdftex.def Info: images/task_5_3.pdf  used on input line 184.
+Package pdftex.def Info: images/task_5_3.pdf  used on input line 178.
 (pdftex.def)             Requested size: 175.89677pt x 216.77422pt.
-) [12 <./images/task_5_3.pdf>] (report.aux (00_title.aux) (01_theory.aux)
-(02_practice.aux)) ) 
+[11 <./images/task_5_1.pdf> <./images/task_5_2.pdf>]) [12 <./images/task_5_3.pd
+f>] (report.aux (00_title.aux) (01_theory.aux) (02_practice.aux)) ) 
 Here is how much of TeX's memory you used:
  31991 strings out of 478864
  767942 string characters out of 2848186
@@ -1503,26 +1503,27 @@ Here is how much of TeX's memory you used:
  418507 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,19n,94p,750b,1476s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
-h-t2a/dpi600\latt1000.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\larm0600.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\tcrm1440.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Лев\AppData\Local\MiKTe
-X\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk> <C:\Users\Лев\AppData\Local\
-MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm3583.pk> <C:\Users\Лев\AppData\L
-ocal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1728.pk> <C:\Users\Лев\AppD
-ata\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\Лев
-\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk> <C:\Users\�
-�ев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Us
-ers\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2074.pk> <
-C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2986.
-pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm
-1440.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
-\labx1000.pk><C:/Users/Лев/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb><C:/Users/Лев/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Лев/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on report.pdf (12 pages, 1123859 bytes).
+ <C:\Users\�
+�ев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt1000.pk> <C:\Us
+ers\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0600.pk> <
+C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm144
+0.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
+bx1440.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi6
+00\larm2074.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
+/dpi600\larm3583.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
+h-t2a/dpi600\lati1728.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts/pk/l
+jfour/lh/lh-t2a/dpi600\larm1728.pk> <C:\Users\Лев\AppData\Local\MiKTeX\fonts
+/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Лев\AppData\Local\MiKTeX\
+fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2074.pk> <C:\Users\Лев\AppData\Local\Mi
+KTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2986.pk> <C:\Users\Лев\AppData\Loc
+al\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Лев\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk><C:/Users/Лев/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users
+/Лев/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+><C:/Users/Лев/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr12.pfb>
+Output written on report.pdf (12 pages, 1123688 bytes).
 PDF statistics:
  648 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
