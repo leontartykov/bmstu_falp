@@ -28,4 +28,4 @@
 
 (print (trapezoid_square 3 5 2))
 
-(print 0.5)
+(print (eval (list 'cons T NIL)))
