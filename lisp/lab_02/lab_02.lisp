@@ -12,4 +12,20 @@
 
 (defun mystery (x) (list (second x) (first x)))
 
-(print (mystery (one two)))
+;(print (mystery (one two)))
+
+(defun f_to_c (temp) (* (/ 5 9) (- temp 32.0)))
+(defun c_to_f (temp) (+ (* (/ 9 5) temp) 32.0))
+
+(print (f_to_c 451))
+(print (c_to_f 0))
+
+(defun hypo_cath (hypo cath) (sqrt (- (* hypo hypo) (* cath cath))))
+
+(print (hypo_cath 15 12))
+
+(defun trapezoid_square (base1 base2 height) (* 0.5 (+ base1 base2) height))
+
+(print (trapezoid_square 3 5 2))
+
+(print 0.5)

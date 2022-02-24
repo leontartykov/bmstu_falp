@@ -106,16 +106,72 @@
 	\item (mystery one 'two)) $\Rightarrow$ ошибка
 \end{enumerate}
 
-\section{Написать функцию, которая переводит температуру в системе Фаренгейта температуру по Цельсию (defum f-to-c (temp)…).}
+\section{Написать функцию, которая переводит температуру в системе Фаренгейта температуру по Цельсию (defun f-to-c (temp)…).}
 
 Формулы:
 
-c = 5/9*(f-320); $\Rightarrow$ 
+\begin{enumerate}
+	\item $c = 5/9*(f-320)$;
+	\begin{lstlisting}[caption=Перевод из Фаренгейт в Цельсий.]
+	(defun f_to_c (temp) (* (/ 5 9) (- temp 32.0)))
+	\end{lstlisting}
+	
+	\item $f = 9/5*c+32.0$;
+	\begin{lstlisting}[caption=Перевод из Цельсия в Фаренгейт.]
+	(defun c_to_f (temp) (+ (* (/ 9 5) temp) 32.0))
+	\end{lstlisting}
+\end{enumerate}
 
-f= 9/5*c+32.0.
+Как бы назывался роман Р.Брэдбери <<+451 по Фаренгейту>> в системе по Цельсию? 
+<<+232.778 по Цельсию>>
 
+\newpage
 \section{Что получится при вычислении каждого из выражений?}
+\begin{enumerate}
+	\item (list 'cons t NIL) $\Rightarrow$ (cons t Nil)
+	\item (eval (list 'cons t NIL))
+	
+	(eval (cons t Nil)) 
+	
+	(eval (t)) $\Rightarrow$ ошибка
+	
+	\item (eval (eval (list 'cons t NIL)))
+	
+	(eval (eval (cons t Nil)))
+	
+	(eval (eval (t))) $\Rightarrow$ ошибка
+	
+	\item (apply \#cons ''(t NIL)) $\Rightarrow$ ошибка
+	
+	(apply \#'cons '(t NIL)) $\Rightarrow$ (t)
+	
+	\item (list 'eval NIL) $\Rightarrow$ (eval NIL)
+	\item (eval NIL) $\Rightarrow$ Nil
+	\item (eval (list 'eval NIL)) $\Rightarrow$ Nil
+\end{enumerate}
 
-\section{Написать функцию, вычисляющую катет по заданной гипотенузе и другому катету прямоугольного треугольника, и составить диаграмму ее вычисления.}
+\newpage
+\section*{Дополнительные задания}
+\section{Написать функцию, вычисляющую катет по заданной гипотенузе и другому катету прямоугольного треугольника, составить диаграмму ее вычисления.}
 
-\section{Написать функцию, вычисляющую площадь трапеции по ее основаниям и 	высоте, и составить диаграмму ее вычисления.}
+\begin{lstlisting}[caption=Дополнительное задание 1.]
+	(defun hypo_cath (hypo cath) 
+		(sqrt (- (* hypo hypo) (* cath cath))))
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering{
+		\includegraphics[scale=1]{images/dop_task_1.pdf}}
+\end{figure}
+
+\section{Написать функцию, вычисляющую площадь трапеции по ее основаниям и 	высоте, составить диаграмму ее вычисления.}
+
+\begin{lstlisting}[caption=Дополнительное задание 2.]
+	(defun trapezoid_square (base1 base2 height) 
+		(* 0.5 (+ base1 base2) height))
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering{
+		\includegraphics[scale=1]{images/dop_task_2.pdf}}
+\end{figure}
