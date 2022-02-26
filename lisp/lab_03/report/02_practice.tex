@@ -1,0 +1,70 @@
+\chapter{Практические задания}
+\section{Написать функцию, которая принимает целое число и возвращает первое четное число, не меньшее аргумента.}
+\begin{lstlisting}[caption=Задание 1]
+	(defun first_even (number)
+		(if (evenp number) number (+ number 1)))
+\end{lstlisting}
+
+\section{Написать функцию, которая принимает число и возвращает число того же знака, но с модулем на 1 больше модуля аргумента.}
+\begin{lstlisting}[caption=Задание 2]
+(defun abs_more (number)
+	(cond ((>= number 0) (+ number 1))
+			(T (- (+ (abs number) 1)))))
+\end{lstlisting}
+
+\section{Написать функцию, которая принимает два числа и возвращает	список из этих чисел, расположенный по возрастанию.}
+\begin{lstlisting}[caption=Задание 3]
+(defun inc_list (number_1 number_2) 
+	(if (<= number_1 number_2) (list number_1 number_2) 
+		(list number_2 number_1)))
+\end{lstlisting}
+
+\section{Написать функцию, которая принимает три числа и возвращает Т только тогда, когда первое число расположено между вторым и третьим.}
+\begin{lstlisting}[caption=Задание 4]
+(defun is_middle (number_1 number_2 number_3)
+	(cond ((and (> number_1 number_2) (< number_1 number_3)) T)
+			(T Nil)))
+\end{lstlisting}
+
+\section{Каков результат вычисления следующих выражений?}
+\begin{enumerate}
+	\item (and 'fee 'fie 'foe) $\Rightarrow$ foe
+	\item (or nil 'fie 'foe) $\Rightarrow$ fie
+	\item (and (equal 'abc 'abc) 'yes) $\Rightarrow$ yes
+	\item (or 'fee 'fie 'foe) $\Rightarrow$ fee
+	\item (and nil 'fie 'foe) $\Rightarrow$ nil
+	\item (or (equal 'abc 'abc) 'yes) $\Rightarrow$ T
+\end{enumerate}
+
+\section{Написать предикат, который принимает два числа-аргумента и возвращает Т, если первое число не меньше второго.}
+\begin{lstlisting}[caption=Задание 6]
+(defun is_bigger (number_1 number_2)
+	(if (>= number_1 number_2) T nil))
+\end{lstlisting}
+
+\section{Какой из следующих двух вариантов предиката ошибочен и почему?}
+\begin{enumerate}
+	\item (defun pred1 (x) (and (numberp x) (plusp x)))
+	
+	\item (defun pred2 (x) (and (plusp x) (numberp x)))
+\end{enumerate}
+
+Вариант \textit{pred2} является ошибочным ввиду того, что если в качестве аргумента будет не число, то функция \textit{plusp} выдаст ошибку. 
+
+\section{Решить задачу 4, используя для ее решения конструкции IF, COND, AND/OR.}
+\begin{lstlisting}[caption=Задание 8]
+(defun is_middle_cond (number_1 number_2 number_3)
+	(cond ((and (> number_1 number_2) (< number_1 number_3)) T) 
+		   (T Nil)))
+	
+(defun is_middle_if (number_1 number_2 number_3)
+	(if (and (> number_1 number_2) (< number_1 number_3)) T nil))
+	
+(defun is_middle_andor (number_1 number_2 number_3)
+	(and (> number_1 number_2) (< number_1 number_3)))
+\end{lstlisting}
+
+\section{Переписать функцию how-alike, приведенную в лекции и использующую COND, используя только конструкции IF, AND/OR.}
+\begin{lstlisting}[caption=Задание 9]
+	content...
+\end{lstlisting}
