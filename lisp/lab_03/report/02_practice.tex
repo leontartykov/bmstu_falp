@@ -64,7 +64,28 @@
 	(and (> number_1 number_2) (< number_1 number_3)))
 \end{lstlisting}
 
+\newpage
 \section{Переписать функцию how-alike, приведенную в лекции и использующую COND, используя только конструкции IF, AND/OR.}
 \begin{lstlisting}[caption=Задание 9]
-	content...
+(defun how_alike_cond(x y)
+	(cond ((or (= x y) (equal x y)) 'the_same)
+		  ((and (oddp x) (oddp y)) 'both_odd)
+		  ((and (evenp x) (evenp y)) 'both_even)
+		  (t 'difference)))
+		  
+(defun how_alike_if_andor(x y)
+	(if (or (= x y) (equal x y)) 'the_same
+		(if (and (oddp x) (oddp y)) 'both_odd 
+			(if (and (evenp x) (evenp y)) 'both_even 'difference))))
+	
+(defun how_alike_if (x y)
+	(if (if (= x y) (equal x y)) 'the_same
+		(if (if (oddp x) (oddp y)) 'both_odd
+			(if (if (evenp x) (evenp y)) 'both_even 'difference))))
+			
+(defun how_alike_andor (x y)
+	(or (and (= x y) (equal x y) 'the_same) 
+		(and (oddp x) (oddp y) 'both_odd)
+		(and (evenp x) (evenp y) 'both_even)
+		'difference)) 
 \end{lstlisting}

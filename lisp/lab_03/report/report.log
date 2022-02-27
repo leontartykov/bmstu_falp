@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.16)  27 FEB 2022 01:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.16)  27 FEB 2022 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,22 +1287,22 @@ Overfull \hbox (22.86354pt too wide) in paragraph at lines 39--39
  |[]\T2A/cmr/m/n/20.74 Ќаписать пре-ди-кат, ко-то-рый при-ни-ма-ет два числа-
  []
 
-[7]
-Overfull \hbox (3.68666pt too wide) in paragraph at lines 67--67
+[7] [8]
+Overfull \hbox (3.68666pt too wide) in paragraph at lines 68--68
  \T2A/cmr/m/n/20.74 лек-ции и ис-поль-зу-ю-щую COND, ис-поль-зу€ толь-
  []
 
-) [8]
+) [9]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 20.
 See the caption package documentation for explanation.
 
 (./report.aux (./00_title.aux) (./01_theory.aux) (./02_practice.aux)) ) 
 Here is how much of TeX's memory you used:
- 31586 strings out of 479304
- 748249 string characters out of 5869779
- 1402176 words of memory out of 5000000
- 48178 multiletter control sequences out of 15000+600000
+ 31594 strings out of 479304
+ 748366 string characters out of 5869779
+ 1530177 words of memory out of 5000000
+ 48186 multiletter control sequences out of 15000+600000
  420675 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,19n,94p,747b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1324,10 +1324,10 @@ ts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm3583.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sfti1728.pfb>
-Output written on report.pdf (8 pages, 1047935 bytes).
+Output written on report.pdf (9 pages, 1051891 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
