@@ -1,5 +1,5 @@
 \chapter{Практические задания}
-\section{}
+\section{Каковы результаты вычисления следующих выражений?}
 \begin{lstlisting}
 	(setf lst1 '(a b))
 	(setf lst2 '(c d))
@@ -22,17 +22,94 @@
 \begin{lstlisting}
 	(defun last_elem_1 (arg) (car (last arg)))
 	
-	(defun last_elem_2 (arg) (first (reverse arg)))
+	(defun last_elem_2 (arg) (first (nreverse arg)))
 \end{lstlisting}
 
 \section{Написать, по крайней мере, два варианта функции, которая возвращает свой список-аргумент без последнего элемента.}
 \begin{lstlisting}
-	(defun without_last_1 (arg) (reverse (cdr (reverse arg))))
+	(defun without_last_1 (arg) (nreverse (cdr (nreverse arg))))
 	
-	
+	(defun without_last_2 (arg) 
+		(reverse (last (nreverse arg) (- (length arg) 1))))
 \end{lstlisting}
 
 \section{Игра в кости}
 Простой вариант игры в кости, в котором бросаются две правильные кости. Если
 сумма выпавших очков равна 7 или 11 -- выигрыш, если выпало (1,1) или (6,6) --- игрок право снова бросить кости, во всех остальных случаях ход переходит ко второму игроку, но запоминается сумма выпавших очков. Если второй игрок не выигрывает абсолютно, то выигрывает тот игрок, у которого больше очков. Результат игры и значения выпавших костей выводить на экран с помощью функции print.
+
+\begin{lstlisting}[basicstyle=\footnotesize,caption= Программный код <<Игра в кости>>]
+(defvar first_gamer nil)
+(defvar second_gamer nil)
+
+(defun roll_dice()
+	(+ (random 6) 1))
+
+(defun is_winner (first_gamer_numbers)
+	(cond ((= (+ (car first_gamer_numbers) (cadr first_gamer_numbers)) 7) T)
+		  ((= (+ (car first_gamer_numbers) (cadr first_gamer_numbers)) 11) T)
+    )
+)
+
+(defun print_gamer(gamer value_gamer)
+	(print gamer)
+	(print (car value_gamer))
+)
+\end{lstlisting}
+\newpage
+
+\begin{lstlisting}[basicstyle=\footnotesize,caption= Программный код <<Игра в кости>> (продолжение)]
+(defun is_new_move (first_gamer_numbers)
+   (cond (
+   		  (and (= (car first_gamer_numbers) 1) (= (cadr first_gamer_numbers) 1))
+		   'one
+		 )
+		 (
+		  (and (= (car first_gamer_numbers) 6) (= (cadr first_gamer_numbers) 6)) 'two
+		 )
+    )
+)
+
+(defun choose_winner()
+	(or 
+		(if (> (+ (caar first_gamer) (cadar first_gamer)) 
+			   (+ (caar second_gamer) (cadar second_gamer)))
+			(print_winner "Первый игрок победил" 1) (print_winner "Второй игрок победил" 1)
+		)
+		(print_winner "Ничья")
+	)
+)
+
+(defun print_winner(str_win type_win)    
+	(print "Игра_завершена")
+	(print_gamer "Первый игрок" first_gamer)
+	(if (null second_gamer) (print "Второй игрок не сделал ход.") 
+		(print_gamer "Второй игрок" second_gamer))
+	(if (= 1 type_win) (print str_win) (choose_winner))
+)
+
+(defun user_round (gamer)
+	(setq gamer (list (roll_dice) (roll_dice)))
+	(cond ((is_winner gamer) (list gamer 1))
+		  ((is_new_move gamer) (user_round gamer))
+		  (T (list gamer 0)) 
+	)
+)
+\end{lstlisting}
+\newpage
+
+\begin{lstlisting}[basicstyle=\footnotesize,caption= Программный код <<Игра в кости>>(продолжение)]
+(defun play_game()
+	(setq first_gamer (user_round first_gamer))
+	(or (cond ((= 1 (cadr first_gamer))
+			   (print_winner "Абсолютная победа первого игрока" 1)))
+		(and (setq second_gamer (user_round second_gamer))
+			 (cond ((= 1 (cadr second_gamer)) 
+			 		(print_winner "Абсолютная победа второго игрока" 1)))
+		)
+		(choose_winner)
+	)
+)        
+
+(play_game)
+\end{lstlisting}
 

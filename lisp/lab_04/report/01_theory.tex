@@ -44,4 +44,38 @@
 	Система по имени символьного атома находит его определение.
 \end{enumerate}
 
-\section{Принципиальное отличие функций cons, list, append}
+\section{Принципиальное отличие функций cons, list, \\ append}
+\textit{cons} -- имеет два аргумента и возвращает бинарный узел. Если вторым аргументом является атом, то возвращается точечная пара; если список -- список.
+
+\textit{list} -- имеет произвольное число аргументов и возвращает список.
+
+\textit{append} -- имеет произвольное число аргументов; важным свойством является то, что создается копия всех аргументов, кроме последнего. В результате функции возвращается список.
+
+\begin{lstlisting}[label=lst:cons, caption=Использование cons.]
+	(cons 'A 'B)          ;; (A.B)
+	(cons 'A '(B C D))    ;; (A B C D)
+	(cons '(A B) '(C D))  ;; ((A B) C D) 
+\end{lstlisting}
+
+Пример использования list представлен на листинге \ref{lst:list}.
+\begin{lstlisting}[label=lst:list, caption=Использование list.]
+	(list 'A 'B)         ;; (A B)
+	(list 'A '(B C) 'D)  ;; (A (B C) D)
+\end{lstlisting}
+
+\newpage
+Функция list может быть представлена с помощью cons (листинг \ref{lst:list_cons}).
+
+\begin{lstlisting}[label=lst:list_cons, caption=Представление list с помощью cons.]
+	(defun list2 (ar1 ar2) (cons ar1 (cons ar2 ())))
+	(defun list3 (ar1 ar2 ar3) (cons ar1 (cons ar2 (cons ar3 ()))))
+	...
+\end{lstlisting}
+
+Отличие в использовании \text{cons}, \text{list}, \text{append} представлен на листинге \ref{lst:conslistappend}.
+\begin{lstlisting}[label=lst:conslistappend, caption=Использование \text{cons,} \text{list,} \text{append}.]
+	(list '(a b) '(c d)) 	;((a b) (c d))
+	(cons '(a b) '(c d))    ;((a b) c d)
+	(append '(a b) '(c d))  ;(a b c d)
+\end{lstlisting}
+
