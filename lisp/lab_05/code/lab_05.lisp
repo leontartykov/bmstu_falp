@@ -122,12 +122,110 @@
 
 ;7. Напишите функцию, которая добавляет к множеству двухэлементных списков новый
 ;двухэлементный список, если его там нет.
+(defun check_lists_in_set (set_lists)
+    (cond ((null set_lists) T)
+          ((not (listp (car set_lists))) nil)
+          ((if (= 2 (length (car set_lists))) (check_lists_in_set (cdr set_lists)) nil))
+    )
+)
+
+(defun is_in_set (new_list set_lists)
+    (cond ((null set_lists) T)
+          ((not (equal new_list (car set_lists))) (is_in_set new_list (cdr set_lists)) )
+    )
+)
+
+(defun append_new_elem (new_list set_lists)
+    (cond ((not (listp new_list)) "Ошибка")
+          ((not (listp set_lists)) "Ошибка")
+          ((not (check_lists_in_set set_lists)) "Ошибка")
+          ((is_in_set new_list set_lists) (nconc set_lists `(,new_list)))
+          (T set_lists)
+    )
+)
+(print "Задание_7")
+(print (append_new_elem '(1 2) '((1 2) (3 4) 4)))
+(print (append_new_elem '(1 2) '((1 2) (3 4) (4 5))))
+(print (append_new_elem '(3 5) '((1 2) (3 4) (4 5))))
 
 ;8.Напишите функцию, которая умножает на заданное число-аргумент первый числовой
 ;элемент списка из заданного 3-х элементного списка-аргумента, когда
 ;a) все элементы списка --- числа,
 ;6) элементы списка -- любые объекты.
+(defun multiply_var_1 (lst number)
+    (cond ((null lst) nil)
+          (T (cons (* number (car lst)) (cdr lst)))
+    )
+)
 
-;9. Напишите функцию, select-between, которая из списка-аргумента из 5 чисел выбирает;
-;только те, которые расположены между двумя указанными границами-аргументами и возвращает;
+(defun multiply_var_2 (lst number)
+    (cond ((null lst) nil)
+          (T (if (numberp (car lst))
+                 (cons (* number (car lst)) (cdr lst)) 
+                 (cons (car lst) (multiply_var_2 (cdr lst) number)))
+          )
+    )
+)
+
+(defun check_lst (lst number)
+    (cond ((not (numberp number)) nil)
+          ((not (listp lst)) nil)
+          ((not (= 3 (length lst))) nil)
+          (T T)
+    )
+)
+
+(defun multiply_list_by_number_1 (lst number)
+    (cond ((check_lst lst number) (multiply_var_1 lst number)))
+)
+
+(defun multiply_list_by_number_2 (lst number)
+    (if (check_lst lst number) (multiply_var_2 lst number) "Ошибка")
+)
+
+(print "Задание 8")
+(print (multiply_list_by_number_2 '(1 2 3) 5))
+(print (multiply_list_by_number_2 '((1 2) 2 3) 5))
+(print (multiply_list_by_number_2 '((1 2) (2) 3) 5))
+
+;9. Напишите функцию, select-between, которая из списка-аргумента из 5 чисел выбирает
+;только те, которые расположены между двумя указанными границами-аргументами и возвращает
 ;их в виде списка (упорядоченного по возрастанию списка чисел).
+(defun select_between (lst board_left board_right)
+    (if (check_input_data lst board_left board_right) 
+        (find_left_board lst board_left board_right 0) "Ошибка")
+)
+
+(defun check_input_data (lst board_left board_right)
+    (cond ((not (= (length lst) 5)) nil)
+          ((< board_left 0) nil)
+          ((>= board_right 5) nil)
+          ((<= board_right board_left) nil)
+          (T T)
+    )
+)
+
+(defun find_left_board (lst board_left board_right index_board)
+    (if (= index_board board_left) 
+        (find_right_board (cdr lst) board_right (+ index_board 1))
+        (find_left_board (cdr lst) board_left board_right (+ index_board 1))   
+    )
+    (sort_asc lst)
+)
+
+(defun find_right_board (lst board_right index_board)
+    (if (= index_board board_right)
+        (cons (car lst) nil) 
+        (cons (car lst) (find_right_board (cdr lst) board_right (+ index_board 1)))
+    )
+)
+
+(defun sort_asc (lst)
+    (print lst)
+)
+
+
+
+
+(print "Задание 9")
+(print (select_between '(1 2 3 4 5) 1 4))
