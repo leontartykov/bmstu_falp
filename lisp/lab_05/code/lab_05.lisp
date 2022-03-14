@@ -192,8 +192,14 @@
 ;только те, которые расположены между двумя указанными границами-аргументами и возвращает
 ;их в виде списка (упорядоченного по возрастанию списка чисел).
 (defun select_between (lst board_left board_right)
-    (if (check_input_data lst board_left board_right) 
-        (find_left_board lst board_left board_right 0) "Ошибка")
+    (let ((result_lst nil))
+         (setq result_lst (if (check_input_data lst board_left board_right) 
+                          (find_left_board lst board_left board_right 0) 
+                          nil
+                          )
+         )
+         (if (not (null result_lst)) (bubble_sort_asc result_lst) "Ошибка")
+    )
 )
 
 (defun check_input_data (lst board_left board_right)
@@ -210,7 +216,6 @@
         (find_right_board (cdr lst) board_right (+ index_board 1))
         (find_left_board (cdr lst) board_left board_right (+ index_board 1))   
     )
-    (sort_asc lst)
 )
 
 (defun find_right_board (lst board_right index_board)
@@ -220,12 +225,23 @@
     )
 )
 
-(defun sort_asc (lst)
-    (print lst)
+(defun bubble (lst)
+    (cond ((atom (cdr lst)) lst)
+          ((> (car lst) (cadr lst)) 
+           (cons (cadr lst) (bubble (cons (car lst) (cddr lst)) ))
+          )
+          (T lst)
+    )
 )
 
-
-
+(defun bubble_sort_asc (lst)
+    (cond ((atom (cdr lst)) lst)
+          (T (bubble (cons (car lst) (bubble_sort_asc (cdr lst)))))
+    )
+)
 
 (print "Задание 9")
-(print (select_between '(1 2 3 4 5) 1 4))
+(print (select_between '(1 2 6 2 5) 1 4))
+;(print (bubble_sort_asc '(5 4 3 2 1)))
+;(print (bubble '(5 4 3 2 1)))
+;(print (bubble_sort_asc '(5 4 3 2 1)))
