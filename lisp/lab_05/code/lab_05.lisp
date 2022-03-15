@@ -1,8 +1,44 @@
 ;1. функция, которая по своему списку-аргументу lst определяет, является ли он палиндромом.
-(defun is_palindrom (lst) 
+(defun is_palindrom_1 (lst) 
     (equal lst (reverse lst)))
+
+(defun is_palindrom_2 (lst)
+    (is_equal_2 lst (my_reverse lst))
+)
+
+(defun is_equal_1 (lst reverse_lst)
+    ;(print "is_equal")
+    ;(print lst)
+    ;(print reverse_lst)
+    (cond ((null lst) T)
+          ((and (numberp (car lst)) (numberp (car reverse_lst))) (is_equal_numbers lst reverse_lst))
+          ((and (listp (car lst)) (listp (car reverse_lst))) (is_equal_1 (car lst) (car reverse_lst)))
+    ) 
+)
+
+(defun is_equal_2 (lst reverse_lst)
+    (cond ((null lst) T)
+          ((= (car lst) (car reverse_lst)) (is_equal_2 (cdr lst) (cdr reverse_lst)))
+    ) 
+)
+
+(defun move_to (lst result)
+    (cond ((null lst) result)
+	       (T (move_to (cdr lst) (cons (car lst) result)))))
+
+(defun my_reverse (lst)
+    (move_to lst ()))
+
+(defun is_equal_numbers (lst reverse_lst)
+    ;(print "is_equal_numbers")
+    ;(print (car lst))
+    ;(print (car reverse_lst))
+    (if (= (car lst) (car reverse_lst)) (is_equal (cdr lst) (cdr reverse_lst)) nil)
+)
+
 (print "Задание_1")
-(print (is_palindrom (list 3 8 5 8 3)))
+(print (is_palindrom_1 '(3 8 5 8 3)))
+(print (is_palindrom_2 '(3 5 3 4 3 5 3)))
 
 ;2. предикат set-equal, который возвращает t, если два его множества-аргумента
 ;содержат одни и те же элементы, порядок которых не имеет значения
@@ -25,11 +61,26 @@
     )
 )
 
+(defun is_set (set)
+    (cond ((null set) T)
+          ((eql (is_double_in_set set) 0) (is_set (cdr set)))
+    )
+)
+
+(defun is_double_in_set (set)
+    (if (member (car set) (cdr set)) 1 0)
+)
+
 (defun set_equal (set_1 set_2)
-    (if (= (length set_1) (length set_2)) (is_equal_set set_1 set_2) 'Ошибка)
+    (cond ((not (is_set set_1)) nil)
+          ((not (is_set set_2)) nil)
+          ((not (= (length set_1) (length set_2))) nil) 
+          ((is_equal_set set_1 set_2) T)
+    )
 )
 (print "Задание_2")
-(print (set_equal (list 1 2 4) (list 3 2 1)))
+;(print (is_set '(1 2 3 4 1 5)))
+(print (set_equal '(1 2 1) '(3 2 1)))
 
 ;3. напишите свои необходимые функции, которые обрабатывают таблицу из 
 ;4-х точечных пар: (страна . столица), и возвращают по стране - столицу,
@@ -65,7 +116,7 @@
 (print "Задание_4")
 (print (swap_first_last '(1 2 3 4)))
 (print (swap_first_last '(3 2 3 -4 8 -12)))
-(print (swap_first_last (list 3 2 3 -4 (list 8 -12))))
+(print (swap_first_last '(3 2 3 -4 (8 -12))))
 
 ;5. Напишите функцию swap-two-element, которая переставляет в списке-аргументе
 ;два указанных своими порядковыми номерами элемента в этом списке.
@@ -191,7 +242,7 @@
 ;9. Напишите функцию, select-between, которая из списка-аргумента из 5 чисел выбирает
 ;только те, которые расположены между двумя указанными границами-аргументами и возвращает
 ;их в виде списка (упорядоченного по возрастанию списка чисел).
-(defun select_between (lst board_left board_right)
+(defun select_between_1 (lst board_left board_right)
     (let ((result_lst nil))
          (setq result_lst (if (check_input_data lst board_left board_right) 
                           (find_left_board lst board_left board_right 0) 
@@ -240,8 +291,16 @@
     )
 )
 
+(defun select_between_2 (lst board_left board_right)
+    (bubble_sort_asc (mapcan #'(lambda (x) 
+               (and (>= x board_left) (<= x board_right) (list x)))
+               lst))
+
+)
+
 (print "Задание 9")
-(print (select_between '(1 2 6 2 5) 1 4))
+(print (select_between_1 '(1 2 6 2 5) 1 4))
+(print (select_between_2 '(7 0 8 3 10 18) 3 8))
 ;(print (bubble_sort_asc '(5 4 3 2 1)))
 ;(print (bubble '(5 4 3 2 1)))
 ;(print (bubble_sort_asc '(5 4 3 2 1)))
