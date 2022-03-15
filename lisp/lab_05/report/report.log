@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.16)  15 MAR 2022 09:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.16)  16 MAR 2022 01:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,6 +1075,9 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box118
@@ -1252,11 +1255,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
  (./01_theory.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-
-Overfull \hbox (25.03102pt too wide) in paragraph at lines 2--2
- |[]\T2A/cmr/m/n/20.74 —труктуроразрушающие и не раз-ру-ша-ю-щие струк-
- []
-
 [2
 
 
@@ -1272,30 +1270,37 @@ Overfull \hbox (25.03102pt too wide) in paragraph at lines 2--2
 
 
 
-]
-Overfull \hbox (18.60103pt too wide) in paragraph at lines 36--36
- \T2A/cmr/m/n/20.74 об-ра-ба-ты-ва-ют таб-ли-цу из 4-х то-чеч-ных пар: (стра-
+] [5] [6] [7]
+Overfull \hbox (11.79674pt too wide) in paragraph at lines 158--158
+ |[]\T2A/cmr/m/n/17.28 Ќапишите функ-цию, ко-то-ра€ до-бав-л€-ет к мно-же-ству 
+двух-
  []
 
-[5] [6] [7]
-Overfull \hbox (6.88419pt too wide) in paragraph at lines 147--147
- \T2A/cmr/m/n/20.74 дан-ное число-аргумент пер-вый чис-ло-вой эле-мент
+[8]
+Overfull \hbox (12.02231pt too wide) in paragraph at lines 189--189
+ |[]\T2A/cmr/m/n/17.28 Ќапишите функ-цию, ко-то-ра€ умно-жа-ет на за-дан-ное чи
+сло-
  []
 
-[8] [9] [10]) [11]
+[9]
+Overfull \hbox (15.19745pt too wide) in paragraph at lines 224--224
+ \T2A/cmr/m/n/17.28 ло-же-ны меж-ду дву-м€ ука-зан-ны-ми границами-аргументами
+ []
+
+[10]) [11]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 20.
 See the caption package documentation for explanation.
 
 (./report.aux (./00_title.aux) (./01_theory.aux) (./02_practice.aux)) ) 
 Here is how much of TeX's memory you used:
- 31616 strings out of 479304
- 748637 string characters out of 5869779
- 1565172 words of memory out of 5000000
- 48210 multiletter control sequences out of 15000+600000
- 419939 words of font info for 57 fonts, out of 8000000 for 9000
+ 31811 strings out of 479304
+ 751105 string characters out of 5869779
+ 1539149 words of memory out of 5000000
+ 48404 multiletter control sequences out of 15000+600000
+ 419065 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,19n,94p,747b,1744s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,19n,94p,747b,1514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/sh
 are/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc
 /dvips/cm-super/cm-super-t2a.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
@@ -1309,12 +1314,11 @@ ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on report.pdf (11 pages, 1039575 bytes).
+per/sfti1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb>
+Output written on report.pdf (11 pages, 1020971 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

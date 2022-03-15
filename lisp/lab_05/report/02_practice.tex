@@ -1,8 +1,40 @@
 \chapter{Практические задания}
 \section{Написать функцию, которая по своему списку-аргументу lst определяет, является ли он палиндромом.}
 \begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 1]
-	(defun is_palindrom (lst) 
-		(equal lst (reverse lst)))
+(defun is_palindrom_1 (lst) 
+	(equal lst (reverse lst)))
+
+(defun is_palindrom_2 (lst)
+	(is_equal_2 lst (my_reverse lst))
+)
+
+(defun is_equal_1 (lst reverse_lst)
+	(cond ((null lst) T)
+		  ((and (numberp (car lst)) (numberp (car reverse_lst))) 
+		        (is_equal_numbers lst reverse_lst))
+		  ((and (listp (car lst)) (listp (car reverse_lst))) 
+		        (is_equal_1 (car lst) (car reverse_lst)))
+	) 
+)
+
+(defun is_equal_2 (lst reverse_lst)
+	(cond ((null lst) T)
+		  ((= (car lst) (car reverse_lst)) (is_equal_2 (cdr lst) (cdr reverse_lst)))
+	) 
+)
+
+(defun move_to (lst result)
+	(cond ((null lst) result)
+	(T (move_to (cdr lst) (cons (car lst) result))))
+)
+
+(defun my_reverse (lst)
+	(move_to lst ()))
+
+(defun is_equal_numbers (lst reverse_lst)
+	(if (= (car lst) (car reverse_lst)) 
+	    (is_equal (cdr lst) (cdr reverse_lst)) nil)
+)
 \end{lstlisting}
 
 \section{Написать предикат set-equal, который возвращает t, если два его множества-аргумента содержат одни и те же элементы, порядок которых не имеет значения.}
@@ -23,12 +55,21 @@
 	)
 )
 
+(defun is_set (set)
+	(cond ((null set) T)
+		  ((eql (is_double_in_set set) 0) (is_set (cdr set)))
+	)
+)
 
+(defun is_double_in_set (set)
+	(if (member (car set) (cdr set)) 1 0)
+)
 
 (defun set_equal (set_1 set_2)
-	(if (= (length set_1) (length set_2)) 
-	    (is_equal_set set_1 set_2) 
-	    'Ошибка
+	(cond ((not (is_set set_1)) nil)
+		  ((not (is_set set_2)) nil)
+		  ((not (= (length set_1) (length set_2))) nil) 
+		  ((is_equal_set set_1 set_2) T)
 	)
 )
 \end{lstlisting}
@@ -83,9 +124,7 @@
 		   (append_elem (cdr lst) (+ index 1) index_1 index_2)))
 	)
 )
-\end{lstlisting}
-\newpage
-\begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 5 (продолжение)]
+
 (defun swap_two_elements (lst index_1 index_2)
 	(setq first_elem (nth index_1 lst))
 	(setq second_elem (nth index_2 lst))
@@ -100,6 +139,7 @@
 )
 \end{lstlisting}
 
+\newpage
 \section{Напишите две функции, swap-to-left и swap-to-right, которые производят одну круговую перестановку в списке-аргументе влево и вправо, соответственно.}
 \begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 6]
 (defun without_last (lst)
@@ -131,7 +171,9 @@
 		   (is_in_set new_list (cdr set_lists)))
 	)
 )
-
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 7 (продолжение)]
 (defun append_new_elem (new_list set_lists)
 	(cond ((not (listp new_list)) "Ошибка")
 		  ((not (listp set_lists)) "Ошибка")
@@ -148,8 +190,7 @@
 \begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 8]
 (defun multiply_var_1 (lst number)
 	(cond ((null lst) nil)
-		   (T (cons (* number (car lst)) (cdr lst)))
-	)
+		   (T (cons (* number (car lst)) (cdr lst))))
 )
 
 (defun multiply_var_2 (lst number)
@@ -172,22 +213,25 @@
 (defun multiply_list_by_number_1 (lst number)
 	(cond ((check_lst lst number) (multiply_var_1 lst number)))
 )
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 8 (продолжение)]
 (defun multiply_list_by_number_2 (lst number)
 	(if (check_lst lst number) (multiply_var_2 lst number) "Ошибка")
 )
 \end{lstlisting}
 
 \section{Напишите функцию, select-between, которая из списка-аргумента из 5 чисел выбирает только те, которые расположены между двумя указанными границами-аргументами и возвращает их в виде списка (упорядоченного по возрастанию списка чисел).}
-\newpage
+
 \begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 9]
-(defun select_between (lst board_left board_right)
+(defun select_between_1 (lst board_left board_right)
 	(let ((result_lst nil))
-		(setq result_lst (if (check_input_data lst board_left board_right) 
-		(find_left_board lst board_left board_right 0) 
-		nil
-						 )
-		)
-		(if (not (null result_lst)) (bubble_sort_asc result_lst) "Ошибка")
+	     (setq result_lst (if (check_input_data lst board_left board_right) 
+		 				  (find_left_board lst board_left board_right 0) 
+		 				  nil
+						  )
+		 )
+	(if (not (null result_lst)) (bubble_sort_asc result_lst) "Ошибка")
 	)
 )
 
@@ -202,16 +246,17 @@
 
 (defun find_left_board (lst board_left board_right index_board)
 	(if (= index_board board_left) 
-	    (find_right_board (cdr lst) board_right (+ index_board 1))
+		(find_right_board (cdr lst) board_right (+ index_board 1))
 		(find_left_board (cdr lst) board_left board_right (+ index_board 1))   
 	)
 )
+\end{lstlisting}
 
-
-
+\newpage
+\begin{lstlisting}[basicstyle=\footnotesize, caption=Задание 9 (продолжение)]
 (defun find_right_board (lst board_right index_board)
 	(if (= index_board board_right)
-		(cons (car lst) nil) 
+	    (cons (car lst) nil) 
 		(cons (car lst) (find_right_board (cdr lst) board_right (+ index_board 1)))
 	)
 )
@@ -219,16 +264,21 @@
 (defun bubble (lst)
 	(cond ((atom (cdr lst)) lst)
 		  ((> (car lst) (cadr lst)) 
-			(cons (cadr lst) (bubble (cons (car lst) (cddr lst)) ))
+		   (cons (cadr lst) (bubble (cons (car lst) (cddr lst)) ))
 		  )
 		  (T lst)
 	)
 )
 
-
 (defun bubble_sort_asc (lst)
 	(cond ((atom (cdr lst)) lst)
 		   (T (bubble (cons (car lst) (bubble_sort_asc (cdr lst)))))
 	)
+)
+
+(defun select_between_2 (lst board_left board_right)
+	(bubble_sort_asc (mapcan #'(lambda (x) 
+			(and (>= x board_left) (<= x board_right) (list x)))
+			lst))
 )
 \end{lstlisting}
