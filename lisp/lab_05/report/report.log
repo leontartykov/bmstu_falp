@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.16)  10 MAR 2022 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.16)  15 MAR 2022 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1267,59 +1267,54 @@ Overfull \hbox (25.03102pt too wide) in paragraph at lines 2--2
 
  (./02_practice.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-
-Overfull \hbox (18.60103pt too wide) in paragraph at lines 10--10
- \T2A/cmr/m/n/20.74 об-ра-ба-ты-ва-ют таб-ли-цу из 4-х то-чеч-ных пар: (стра-
- []
-
 [4
 
 
 
 
 ]
-Overfull \hbox (6.88419pt too wide) in paragraph at lines 18--18
+Overfull \hbox (18.60103pt too wide) in paragraph at lines 36--36
+ \T2A/cmr/m/n/20.74 об-ра-ба-ты-ва-ют таб-ли-цу из 4-х то-чеч-ных пар: (стра-
+ []
+
+[5] [6] [7]
+Overfull \hbox (6.88419pt too wide) in paragraph at lines 147--147
  \T2A/cmr/m/n/20.74 дан-ное число-аргумент пер-вый чис-ло-вой эле-мент
  []
 
-
-Overfull \hbox (59.09457pt too wide) in paragraph at lines 18--18
- \T2A/cmr/m/n/20.74 спис-ка из за-дан-но-го 3-х эле-мент-но-го списка-аргумента
-,
- []
-
-) [5] [6]
+[8] [9] [10]) [11]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 20.
 See the caption package documentation for explanation.
 
 (./report.aux (./00_title.aux) (./01_theory.aux) (./02_practice.aux)) ) 
 Here is how much of TeX's memory you used:
- 31544 strings out of 479304
- 747661 string characters out of 5869779
- 1339174 words of memory out of 5000000
- 48140 multiletter control sequences out of 15000+600000
- 419532 words of font info for 56 fonts, out of 8000000 for 9000
+ 31616 strings out of 479304
+ 748637 string characters out of 5869779
+ 1565172 words of memory out of 5000000
+ 48210 multiletter control sequences out of 15000+600000
+ 419939 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,19n,94p,747b,1300s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,19n,94p,747b,1744s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/sh
-are/texmf/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfbx2986.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfti1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on report.pdf (6 pages, 1003235 bytes).
+are/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc
+/dvips/cm-super/cm-super-t2a.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2986.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb>
+Output written on report.pdf (11 pages, 1039575 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
