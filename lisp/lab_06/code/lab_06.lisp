@@ -70,9 +70,10 @@
 ; аргументами и возвращает их в виде списка (упорядоченного по возрастанию списка чисел
 ; (+ 2 балла)).
 (defun select_between (lst board_left board_right)
-    (mapcan #'(lambda (x) 
+    (bubble_sort_asc (mapcan #'(lambda (x) 
                (and (>= x board_left) (<= x board_right) (list x)))
                lst)
+    )
 )
 
 (defun bubble (lst)
@@ -106,9 +107,18 @@
 ; (reduce #'+ ()) -> 0
 ; 9. Пусть list-of-list список, состоящий из списков. Написать функцию, которая вычисляет
 ; сумму длин всех элементов list-of-list, т.е. например для аргумента ((1 2) (3 4)) -> 4.
-(defun list_of_list (lst)
-    (reduce #'(lambda (count x) (+ count (length x))) (cons 0 lst))
+(defun list_of_list (lst count)
+    (print "list-of_lists")
+    (print lst)
+    (cond ((null lst) nil)
+          ((atom (car lst) ) (list_of_list (cdr lst) (+ count 1)))
+          (T (count_elem_list (list (quote (car lst)))))
+    )
+)
+
+(defun count_elem_list (lst)
+    (reduce #'(lambda (count x) (+ count (length x))) lst :initial-value 0)
 )
 (print "Задание 9")
-(print (list_of_list '((1 2) (3 4))))
-(print (list_of_list '((1 2) (5 (3 4)))))
+(print (count_elem_list '((1 2) (3 (4 5)))) )
+;(print (list_of_list '((1 2) (5 (3 4)))))
